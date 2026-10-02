@@ -1,0 +1,8 @@
+.tb-assistant { font-size: var(--tb-font-size-body); color: var(--tb-color-text-body); display: grid; gap: var(--tb-space-3); }
+.tb-assistant p { margin: 0; }
+.tb-assistant__thinking { color: var(--tb-color-text-muted); }
+.tb-assistant__dots i { font-style: normal; animation: tb-blink 1.2s infinite both; }
+.tb-assistant__dots i:nth-child(2) { animation-delay: 0.2s; }
+.tb-assistant__dots i:nth-child(3) { animation-delay: 0.4s; }
+@keyframes tb-blink { 0%, 80%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .tb-assistant__dots i { animation: none; } }

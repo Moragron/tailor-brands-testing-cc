@@ -1,0 +1,31 @@
+{
+  "name": "tailor-brands-testing-cc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proof of concept: a decision-tree flow (data + pure engine) on the Tailor Brands design system, runnable as a claude.ai Artifact.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "ds:sync": "node scripts/sync-design-system.mjs",
+    "artifact:build": "node scripts/build-artifact.mjs"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.3"
+  }
+}

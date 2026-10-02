@@ -1,0 +1,5 @@
+.tb-pricing { display: grid; gap: var(--tb-space-3); align-content: start; background: var(--tb-color-surface-card); border: 1px solid var(--tb-color-border-card); border-radius: var(--tb-radius-card); box-shadow: var(--tb-shadow-card); padding: var(--tb-space-6); }
+.tb-pricing[data-highlighted] { border-color: var(--tb-color-action-primary-bg); border-width: 2px; }
+.tb-pricing__head { display: flex; align-items: center; gap: var(--tb-space-2); }
+.tb-pricing__price { display: flex; align-items: baseline; gap: var(--tb-space-1); }
+.tb-pricing__features { margin: 0; padding-left: var(--tb-space-5); display: grid; gap: var(--tb-space-2); font-size: var(--tb-font-size-caption); }

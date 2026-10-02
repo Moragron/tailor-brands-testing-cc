@@ -1,0 +1,16 @@
+/* Scoped helpers shared by every component (imported via components.css). Class-scoped only: no element or global selectors,
+   so the library can sit next to Tailwind preflight / shadcn without restyling the host app. */
+:where([class^='tb-'], [class*=' tb-']),
+:where([class^='tb-'], [class*=' tb-'])::before,
+:where([class^='tb-'], [class*=' tb-'])::after { box-sizing: border-box; }
+/* Component display rules (grid/flex) must not defeat the hidden attribute. */
+[class*='tb-'][hidden] { display: none !important; }
+
+.tb-h1 { font-family: var(--tb-font-family-heading); font-size: var(--tb-font-size-h1); font-weight: var(--tb-font-weight-h1); line-height: var(--tb-font-line-height-h1); color: var(--tb-color-text-primary); margin: 0; }
+.tb-h2 { font-family: var(--tb-font-family-heading); font-size: var(--tb-font-size-h2); font-weight: var(--tb-font-weight-h2); line-height: var(--tb-font-line-height-h2); color: var(--tb-color-text-primary); margin: 0; }
+.tb-h3 { font-family: var(--tb-font-family-heading); font-size: var(--tb-font-size-h3); font-weight: var(--tb-font-weight-h2); color: var(--tb-color-text-primary); margin: 0; }
+.tb-body { font-family: var(--tb-font-family-base); font-size: var(--tb-font-size-body); line-height: var(--tb-font-line-height-body); color: var(--tb-color-text-body); margin: 0; }
+.tb-caption { font-family: var(--tb-font-family-base); font-size: var(--tb-font-size-caption); color: var(--tb-color-text-muted); margin: 0; }
+/* Accessible focus ring for keyboard users. */
+.tb-focusable:focus-visible { outline: 2px solid var(--tb-color-text-primary); outline-offset: 2px; }
+.tb-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

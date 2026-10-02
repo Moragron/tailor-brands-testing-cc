@@ -1,0 +1,12 @@
+/* Design-system styles for Tailwind 4 apps: the one CSS entry to import, right after Tailwind.
+ *   @import "tailwindcss";
+ *   @import "./design-system/<slug>/styles/index.css";
+ * Tokens go in Tailwind's theme layer and component styles in its components layer, so Tailwind
+ * utilities passed via className (e.g. mt-6) override component styles and preflight never does.
+ * theme.css adds the token utilities: bg-tb-*, text-tb-*, rounded-tb-*, shadow-tb-*, font-tb-*, leading-tb-*.
+ * Tailwind 3 apps import tw3/index.css instead (see .lovable/system.md).
+ */
+@layer theme, base, components, utilities;
+@import './tokens.css' layer(theme);
+@import './components.css' layer(components);
+@import './theme.css';

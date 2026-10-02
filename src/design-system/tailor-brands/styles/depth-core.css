@@ -1,0 +1,50 @@
+/* Layered questionnaire look: plain CSS, no cascade layer. Not an entry point: import
+ * styles/depth.css (Tailwind 4, puts these rules in the components layer) or styles/tw3/depth.css.
+ *
+ * The automated captures measured flat surfaces (tokens.json: shadow.card, shadow.modal = none;
+ * effect.page-gradient = placeholder). This layer is opt-in and NOT part of the measured token set.
+ * Its colours were sampled from a reference screenshot of the questionnaire flow: a white page with
+ * a soft blue glow rising from the bottom, a translucent sticky action bar, a hairline under the
+ * header, and a pink → violet → blue gradient ring on the active input.
+ * Opt a page back out with <html data-tb-depth="flat">.
+ */
+:root:not([data-tb-depth='flat']) {
+  /* Colours sampled from the reference screenshot. */
+  --tb-color-glow: #dde8f5;             /* bottom-of-page blue haze (peaks around #e2ecf6) */
+  --tb-color-divider: #dfe7ef;          /* hairline above the action bar / under the header */
+  --tb-color-accent-pink: #d46fbb;      /* gradient ring, start */
+  --tb-color-accent-violet: #b760c8;    /* gradient ring, middle */
+  --tb-color-accent-blue: #6074d8;      /* gradient ring, end */
+  --tb-color-input-tint: #eef2fe;       /* faint blue inside the active input, right side */
+
+  /* Gradients. The page glow sits low and wide: white at the top, blue haze behind the action bar. */
+  --tb-effect-page-gradient:
+    radial-gradient(60% 60% at 50% 95%, var(--tb-color-glow) 0%, color-mix(in srgb, var(--tb-color-glow) 55%, transparent) 45%, transparent 100%);
+  --tb-effect-section-gradient: linear-gradient(180deg, var(--tb-color-surface-page) 0%, var(--tb-color-glow) 100%);
+  --tb-effect-accent-gradient: linear-gradient(80deg, var(--tb-color-accent-pink) 0%, var(--tb-color-accent-violet) 30%, var(--tb-color-accent-blue) 80%, var(--tb-color-accent-blue) 100%);
+  --tb-effect-input-fill: linear-gradient(90deg, var(--tb-color-surface-card) 45%, var(--tb-color-input-tint) 100%);
+  --tb-effect-bar-bg: color-mix(in srgb, var(--tb-color-surface-page) 35%, transparent);
+}
+
+/* Questionnaire shell: hairline under the header; the action bar sticks to the bottom and is
+   translucent, so the page glow shows through it (blurred), like the reference. */
+:root:not([data-tb-depth='flat']) .tb-step-layout__header { border-bottom: 1px solid var(--tb-color-divider); }
+:root:not([data-tb-depth='flat']) .tb-step-layout__footer {
+  position: sticky; bottom: 0; z-index: 5;
+  background: var(--tb-effect-bar-bg);
+  backdrop-filter: blur(var(--tb-effect-backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--tb-effect-backdrop-blur));
+  border-top: 1px solid var(--tb-color-divider);
+}
+
+/* Active (focused) or answered input: 2px gradient ring + faint blue fill. The ring replaces
+   the black focus outline and keeps a visible focus indicator. */
+:root:not([data-tb-depth='flat']) :is(.tb-field__control:focus-within, .tb-field__control[data-filled]):not([data-invalid]),
+:root:not([data-tb-depth='flat']) .tb-chip-group__free-text:focus {
+  border: 2px solid transparent;
+  background: var(--tb-effect-input-fill) padding-box, var(--tb-effect-accent-gradient) border-box;
+  outline: 0;
+}
+/* Keep the field height stable when the border goes from 1px to 2px. */
+:root:not([data-tb-depth='flat']) :is(.tb-field__control:focus-within, .tb-field__control[data-filled]):not([data-invalid]) .tb-field__input { padding: calc(var(--tb-space-3) - 1px) calc(var(--tb-space-4) - 1px); }
+:root:not([data-tb-depth='flat']) .tb-chip-group__free-text:focus { padding: calc(var(--tb-space-3) - 1px) calc(var(--tb-space-4) - 1px); }

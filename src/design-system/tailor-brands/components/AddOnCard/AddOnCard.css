@@ -1,0 +1,10 @@
+.tb-addon { background: var(--tb-color-surface-card); border: 1px solid var(--tb-color-border-card); border-radius: var(--tb-radius-card); box-shadow: var(--tb-shadow-card); padding: var(--tb-space-5); }
+.tb-addon__title { margin: 0 0 var(--tb-space-3); font-family: var(--tb-font-family-base); font-size: var(--tb-font-size-caption); letter-spacing: 0.06em; text-transform: uppercase; color: var(--tb-color-text-muted); }
+.tb-addon__items { list-style: none; margin: 0; padding: 0; display: grid; }
+.tb-addon-item { display: flex; gap: var(--tb-space-4); align-items: flex-start; justify-content: space-between; padding: var(--tb-space-4) 0; border-top: 1px solid var(--tb-color-border-card); }
+.tb-addon-item:first-child { border-top: 0; }
+.tb-addon-item__main { display: grid; gap: var(--tb-space-1); flex: 1; }
+.tb-addon-item__title { font-weight: var(--tb-font-weight-chip-selected); color: var(--tb-color-text-primary); display: flex; gap: var(--tb-space-2); align-items: center; flex-wrap: wrap; }
+.tb-addon-item__price { font-weight: var(--tb-font-weight-body); color: var(--tb-color-text-muted); }
+.tb-addon-item__actions { display: flex; gap: var(--tb-space-2); flex: none; }
+.tb-badge { font-size: 11px; font-weight: var(--tb-font-weight-chip-selected); letter-spacing: 0.04em; text-transform: uppercase; background: var(--tb-color-badge-bg); color: var(--tb-color-badge-fg); border: 1px solid currentColor; border-radius: var(--tb-radius-chip); padding: 1px var(--tb-space-2); }

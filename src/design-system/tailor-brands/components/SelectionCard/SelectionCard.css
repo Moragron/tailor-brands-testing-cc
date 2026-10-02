@@ -1,0 +1,18 @@
+.tb-card-group { display: grid; gap: var(--tb-space-2); }
+.tb-selection-card {
+  display: flex; align-items: center; gap: var(--tb-space-3);
+  font: inherit; text-align: left; width: 100%;
+  background: var(--tb-color-surface-card);
+  color: var(--tb-color-text-body);
+  border: 1px solid var(--tb-color-border-card);
+  border-radius: var(--tb-radius-card);
+  box-shadow: var(--tb-shadow-card);
+  padding: var(--tb-space-4);
+  cursor: pointer;
+}
+.tb-selection-card[data-selected] { border-color: var(--tb-color-chip-selected-border); background: var(--tb-color-chip-selected-bg); box-shadow: var(--tb-shadow-chip-selected); font-weight: var(--tb-font-weight-chip-selected); }
+.tb-selection-card__radio { width: 18px; height: 18px; flex: none; border-radius: 50%; border: 1px solid var(--tb-color-border-default); background: var(--tb-color-surface-card); }
+.tb-selection-card[data-selected] .tb-selection-card__radio { border: 5px solid var(--tb-color-action-primary-bg); }
+.tb-selection-card__label { display: block; }
+.tb-selection-card__desc { display: block; font-size: var(--tb-font-size-caption); color: var(--tb-color-text-muted); }
+/* Selected state re-uses the chip-selected tokens. */

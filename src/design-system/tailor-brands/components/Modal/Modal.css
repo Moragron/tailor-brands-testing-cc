@@ -1,0 +1,15 @@
+.tb-modal__scrim { position: relative; z-index: 20; display: grid; justify-items: center; align-items: start; padding: var(--tb-space-12) var(--tb-space-4); background: var(--tb-color-overlay-scrim); }
+.tb-modal {
+  position: relative; width: 100%; max-width: 440px;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tb-space-4);
+  background: var(--tb-color-surface-card);
+  border-radius: var(--tb-radius-modal);
+  box-shadow: var(--tb-shadow-modal);
+  padding: var(--tb-space-8) var(--tb-space-6);
+}
+.tb-modal__title { text-align: center; }
+.tb-modal__close { position: absolute; top: var(--tb-space-3); right: var(--tb-space-3); font-size: 22px; line-height: 1; background: none; border: 0; cursor: pointer; color: var(--tb-color-text-muted); }
+/* Content and gate share one grid cell, so the container grows to whichever is taller. */
+.tb-gated { display: grid; min-height: 640px; }
+.tb-gated > * { grid-area: 1 / 1; }
+.tb-gated__content[data-locked] { filter: blur(var(--tb-effect-backdrop-blur)); pointer-events: none; user-select: none; }

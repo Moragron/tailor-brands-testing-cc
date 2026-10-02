@@ -1,0 +1,12 @@
+/* OPTIONAL global page styles (any Tailwind version): import after the main styles entry.
+   Opt in only for apps that are fully Tailor-branded; it styles <body>. */
+body {
+  margin: 0;
+  background-color: var(--tb-color-surface-page);
+  background-image: var(--tb-effect-page-gradient); /* none unless depth.css is imported */
+  background-repeat: no-repeat;
+  color: var(--tb-color-text-body);
+  font-family: var(--tb-font-family-base);
+  font-size: var(--tb-font-size-body);
+  line-height: var(--tb-font-line-height-body);
+}

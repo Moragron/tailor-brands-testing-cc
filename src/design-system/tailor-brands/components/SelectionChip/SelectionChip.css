@@ -1,0 +1,23 @@
+.tb-chip-group { display: grid; gap: var(--tb-space-4); }
+.tb-chip-group__chips { display: flex; flex-wrap: wrap; gap: var(--tb-space-2); }
+.tb-chip {
+  font: inherit;
+  font-size: var(--tb-font-size-body);
+  background: var(--tb-color-chip-bg);
+  color: var(--tb-color-chip-fg);
+  border: 1px solid var(--tb-color-chip-border);
+  border-radius: var(--tb-radius-chip);
+  box-shadow: var(--tb-shadow-card);
+  padding: var(--tb-space-2) var(--tb-space-4);
+  cursor: pointer;
+}
+.tb-chip[data-selected] { background: var(--tb-color-chip-selected-bg); color: var(--tb-color-chip-selected-fg); border-color: var(--tb-color-chip-selected-border); box-shadow: var(--tb-shadow-chip-selected); font-weight: var(--tb-font-weight-chip-selected); }
+/* Hover, disabled and max-selection states are not defined by the system. */
+.tb-chip-group__free-text {
+  font: inherit;
+  padding: var(--tb-space-3) var(--tb-space-4);
+  border: 1px solid var(--tb-color-border-default);
+  border-radius: var(--tb-radius-input);
+  background: var(--tb-color-surface-card);
+  color: var(--tb-color-text-body);
+}

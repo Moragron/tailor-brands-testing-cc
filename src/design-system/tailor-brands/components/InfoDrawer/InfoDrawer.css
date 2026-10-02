@@ -1,0 +1,6 @@
+.tb-info-drawer__trigger { font: inherit; font-size: var(--tb-font-size-caption); color: var(--tb-color-text-primary); text-decoration: underline; background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; gap: var(--tb-space-1); align-items: center; }
+.tb-info-drawer__chevron { transition: transform 0.15s; }
+.tb-info-drawer__chevron[data-open] { transform: rotate(180deg); }
+.tb-info-drawer__panel { display: grid; gap: var(--tb-space-3); margin-top: var(--tb-space-3); padding: var(--tb-space-4); background: var(--tb-color-surface-muted); border-radius: var(--tb-radius-card); }
+.tb-info-drawer__heading { margin: 0 0 var(--tb-space-1); font-size: var(--tb-font-size-caption); font-weight: var(--tb-font-weight-button); color: var(--tb-color-text-primary); }
+.tb-info-drawer__body { font-size: var(--tb-font-size-caption); }

@@ -1,0 +1,44 @@
+{
+  "exampleContent": true,
+  "useCases": [
+    {
+      "id": "idea-with-identity",
+      "persona": "Maya, planning a bakery, wants a name and a logo before opening",
+      "answers": { "stage": "idea", "needs": ["name-logo", "legal"], "describe": "I want to open a bakery for custom cakes" },
+      "aiCategory": "local-service",
+      "expectedPath": ["stage", "needs", "describe", "outcome-foundation"],
+      "expectedOutcome": "outcome-foundation"
+    },
+    {
+      "id": "idea-wants-website",
+      "persona": "Jon, an idea-stage candle maker, only wants a website (the Foundation rule needs a name-and-logo request)",
+      "answers": { "stage": "idea", "needs": ["website"], "describe": "Handmade candles sold online" },
+      "aiCategory": "online-store",
+      "expectedPath": ["stage", "needs", "describe", "outcome-storefront"],
+      "expectedOutcome": "outcome-storefront"
+    },
+    {
+      "id": "creator-grows-audience",
+      "persona": "Priya, a cooking video creator with a few customers, wants social media help",
+      "answers": { "stage": "starting", "needs": ["social"], "describe": "I make cooking videos for home cooks" },
+      "aiCategory": "creator",
+      "expectedPath": ["stage", "needs", "describe", "outcome-audience"],
+      "expectedOutcome": "outcome-audience"
+    },
+    {
+      "id": "local-plumber-no-ai",
+      "persona": "Sam, a plumbing business owner; no AI available, so the keyword rule classifies the sentence",
+      "answers": { "stage": "growing", "needs": ["name-logo"], "describe": "Plumbing company serving the local area" },
+      "expectedPath": ["stage", "needs", "describe", "outcome-essentials"],
+      "expectedOutcome": "outcome-essentials"
+    },
+    {
+      "id": "category-decides",
+      "persona": "Lee, picks no channel, but the AI category (creator) decides the outcome",
+      "answers": { "stage": "growing", "needs": ["legal"], "describe": "A weekly podcast about small business" },
+      "aiCategory": "creator",
+      "expectedPath": ["stage", "needs", "describe", "outcome-audience"],
+      "expectedOutcome": "outcome-audience"
+    }
+  ]
+}

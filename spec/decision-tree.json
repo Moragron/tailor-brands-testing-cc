@@ -1,0 +1,116 @@
+{
+  "id": "brand-starter-example",
+  "title": "Brand starter (example flow)",
+  "exampleContent": true,
+  "start": "stage",
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "question",
+      "kind": "single",
+      "prompt": "Where is your business today?",
+      "options": [
+        { "value": "idea", "label": "Just an idea", "description": "Nothing is public yet" },
+        { "value": "starting", "label": "Just started", "description": "A few first customers" },
+        { "value": "growing", "label": "Up and running", "description": "Ready to reach more people" }
+      ],
+      "edges": [{ "to": "needs" }]
+    },
+    {
+      "id": "needs",
+      "type": "question",
+      "kind": "multi",
+      "prompt": "What do you need first?",
+      "options": [
+        { "value": "name-logo", "label": "Name and logo" },
+        { "value": "website", "label": "A website" },
+        { "value": "social", "label": "Social media" },
+        { "value": "legal", "label": "Business setup" }
+      ],
+      "edges": [{ "to": "describe" }]
+    },
+    {
+      "id": "describe",
+      "type": "question",
+      "kind": "text",
+      "prompt": "Describe your business in one sentence",
+      "placeholder": "For example: I bake custom cakes for weddings",
+      "classify": {
+        "categories": [
+          { "value": "local-service", "label": "Local service", "keywords": ["local", "shop", "salon", "repair", "plumb", "clean", "restaurant", "cafe", "bakery", "studio", "clinic"] },
+          { "value": "online-store", "label": "Online store", "keywords": ["online", "store", "sell", "shipping", "handmade", "products", "ecommerce", "etsy"] },
+          { "value": "creator", "label": "Creator", "keywords": ["video", "content", "podcast", "blog", "creator", "music", "stream", "newsletter", "course"] }
+        ],
+        "fallback": "local-service"
+      },
+      "edges": [
+        {
+          "to": "outcome-foundation",
+          "when": { "op": "all", "of": [
+            { "op": "equals", "answer": "stage", "value": "idea" },
+            { "op": "includes", "answer": "needs", "value": "name-logo" }
+          ] }
+        },
+        {
+          "to": "outcome-storefront",
+          "when": { "op": "any", "of": [
+            { "op": "includes", "answer": "needs", "value": "website" },
+            { "op": "equals", "answer": "describe.category", "value": "online-store" }
+          ] }
+        },
+        {
+          "to": "outcome-audience",
+          "when": { "op": "any", "of": [
+            { "op": "includes", "answer": "needs", "value": "social" },
+            { "op": "equals", "answer": "describe.category", "value": "creator" }
+          ] }
+        },
+        { "to": "outcome-essentials" }
+      ]
+    },
+    {
+      "id": "outcome-foundation",
+      "type": "outcome",
+      "outcome": {
+        "plan": "Foundation",
+        "price": "$19",
+        "period": "/mo (example)",
+        "items": ["Business name ideas", "Logo and brand colours", "Setup checklist"],
+        "reason": "You are at the idea stage and want an identity first, so we start with the basics before anything goes public."
+      }
+    },
+    {
+      "id": "outcome-storefront",
+      "type": "outcome",
+      "outcome": {
+        "plan": "Storefront",
+        "price": "$39",
+        "period": "/mo (example)",
+        "items": ["One-page website", "Product page templates", "Checkout-ready brand kit"],
+        "reason": "You want to sell or be found online, so a website with product pages comes before social channels."
+      }
+    },
+    {
+      "id": "outcome-audience",
+      "type": "outcome",
+      "outcome": {
+        "plan": "Audience",
+        "price": "$29",
+        "period": "/mo (example)",
+        "items": ["Social profile kit", "Monthly post templates", "Link-in-bio page"],
+        "reason": "Social reach is your priority or your business is built around content, so we focus on where your audience is."
+      }
+    },
+    {
+      "id": "outcome-essentials",
+      "type": "outcome",
+      "outcome": {
+        "plan": "Essentials",
+        "price": "$24",
+        "period": "/mo (example)",
+        "items": ["Logo refresh", "Business cards and signage", "Local listing profile"],
+        "reason": "Your business serves people nearby, so a consistent look and a findable listing are the best first step."
+      }
+    }
+  ]
+}

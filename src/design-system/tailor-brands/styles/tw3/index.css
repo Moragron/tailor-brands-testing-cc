@@ -1,0 +1,10 @@
+/* Design-system styles for Tailwind 3 apps: the one CSS entry to import, at the top of the global
+ * stylesheet (before the @tailwind directives), plus the preset in tailwind.config.ts:
+ *   @import "./design-system/<slug>/styles/tw3/index.css";
+ *   @tailwind base; @tailwind components; @tailwind utilities;
+ * Plain CSS on purpose: Tailwind 3 output has no cascade layers, and it would purge rules placed
+ * in its own @layer components. Component selectors are classes, so they beat preflight's element
+ * selectors; Tailwind utilities come later in the file and still win on equal specificity.
+ */
+@import '../tokens.css';
+@import '../components.css';

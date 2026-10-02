@@ -1,0 +1,16 @@
+.tb-button {
+  font: inherit;
+  font-family: var(--tb-font-family-base);
+  font-size: var(--tb-font-size-button);
+  font-weight: var(--tb-font-weight-button);
+  border-radius: var(--tb-radius-button);
+  padding: var(--tb-space-3) var(--tb-space-6);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.tb-button--primary { background: var(--tb-color-action-primary-bg); color: var(--tb-color-action-primary-fg); }
+.tb-button--primary:hover:not(:disabled) { background: var(--tb-color-action-primary-hover-bg); }
+.tb-button--secondary { background: var(--tb-color-action-secondary-bg); color: var(--tb-color-action-secondary-fg); border-color: var(--tb-color-action-secondary-border); }
+.tb-button:disabled { background: var(--tb-color-action-primary-disabled-bg); color: var(--tb-color-action-primary-disabled-fg); border-color: transparent; cursor: not-allowed; }
+.tb-button--full { width: 100%; }
+/* Active and loading states are not defined by the system. */

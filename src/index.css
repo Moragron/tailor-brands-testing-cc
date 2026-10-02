@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "./design-system/tailor-brands/styles/index.css";
+@import "./design-system/tailor-brands/styles/shadcn.css";
+@import "./design-system/tailor-brands/styles/base.css";
+@import "./design-system/tailor-brands/styles/depth.css";

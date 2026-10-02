@@ -1,0 +1,11 @@
+.tb-autocomplete { position: relative; }
+.tb-autocomplete__list {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
+  margin: var(--tb-space-1) 0 0; padding: var(--tb-space-1) 0; list-style: none;
+  background: var(--tb-color-surface-card);
+  border: 1px solid var(--tb-color-border-card);
+  border-radius: var(--tb-radius-input);
+  box-shadow: var(--tb-shadow-modal);
+}
+.tb-autocomplete__list li { padding: var(--tb-space-2) var(--tb-space-4); cursor: pointer; }
+.tb-autocomplete__list li[data-active] { background: var(--tb-color-surface-muted); }

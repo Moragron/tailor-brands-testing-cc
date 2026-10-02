@@ -1,0 +1,5 @@
+/* OPTIONAL layered questionnaire look for Tailwind 4 apps. Import after styles/index.css:
+ *   @import "./design-system/<slug>/styles/depth.css";
+ * Same layer as the component styles, so className utilities still win. Rules: depth-core.css.
+ */
+@import './depth-core.css' layer(components);
