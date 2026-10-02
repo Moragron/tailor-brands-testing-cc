@@ -47,7 +47,7 @@ src/App.tsx    renders at once with local adapters; Artifact capabilities replac
 
 **Graceful degradation.** The flow needs no capability. With none (a viewer outside the organization, a public link, a local `npm run dev`) it uses the keyword rule for the AI step and keeps the session in memory, and the outcome screen says so. `db` + `user` add private saved sessions, `sample` adds the AI classification. The "What this view supports" panel shows which adapters are live.
 
-**Privacy.** Sessions are written to `data/users/<user id>/sessions/<id>`, a path the `db` capability keeps private to that person.
+**Privacy.** Sessions are written to the collection `data/users/<user id>/sessions/items`, one document per session, under the `data/users/` prefix that the `db` capability keeps private to each person. (The shorter `data/users/<id>/sessions/<id>` is a collection path by segment count, not a document.)
 
 ## Commands
 

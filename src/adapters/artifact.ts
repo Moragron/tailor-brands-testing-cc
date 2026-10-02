@@ -30,7 +30,11 @@ async function use<T>(name: string): Promise<T | null> {
   }
 }
 
-const sessionsPath = (userId: string) => `data/users/${userId}/sessions`;
+/**
+ * Private per-person collection. Paths alternate collection/document, so a collection has an odd number of segments:
+ * data/users/<id>/sessions is a document (4), and its sessions live in the collection data/users/<id>/sessions/items (5).
+ */
+export const sessionsPath = (userId: string) => `data/users/${userId}/sessions/items`;
 
 function storageAdapter(db: Db, userId: string): StorageAdapter {
   return {
