@@ -4,7 +4,7 @@ A decision-tree flow defined as **data**, walked by a **pure TypeScript engine**
 
 This is a personal project. All flow copy is example content. The design system lives in its own repo and stays content-free: flows, logic and copy only ever go here.
 
-**Published Artifact:** _not published yet_ (always republish to this same URL)
+**Published Artifact:** https://claude.ai/artifact/HxCNdNGXvSD9Z5E6riNAbj (private to the owner until shared; always republish to this same URL)
 
 ## Architecture
 
