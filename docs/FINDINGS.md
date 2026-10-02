@@ -60,7 +60,7 @@ Estimate, not done. The engine, spec files and screens move unchanged. Three fil
 
 ## Recommendation for the real assignment
 
-1. **Use this architecture.** Spec as JSON, a pure engine with a validator, scenarios shared by tests and UI, adapters at the edges. It stayed small (about 600 lines of source) and the validator and scenario tests caught real mistakes early.
+1. **Use this architecture.** Spec as JSON, a pure engine with a validator, scenarios shared by tests and UI, adapters at the edges. It stayed small (about 900 lines of TypeScript including tests) and the validator and scenario tests caught real mistakes early.
 2. **Make AI an enhancement, never a dependency.** Every AI step needs a deterministic fallback and a visible note of which path ran, as here.
 3. **Count path segments** before designing any storage layout, and add a test for it.
 4. **Verify in the viewer before presenting.** The one gap in this proof is the page running inside claude.ai; budget a first pass for exactly that: a real session write, the consent prompt and the `sample` timing, and a second account.
